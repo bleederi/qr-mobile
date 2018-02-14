@@ -1,6 +1,6 @@
 
 
-constraints = { audio: true, video: { facingMode: "user" } };
+var constraints = { audio: true, video: { facingMode: "user" } };
 navigator.mediaDevices.getUserMedia(constraints)
 .then(function(stream) {
   /* Usage here */
