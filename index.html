@@ -6,8 +6,17 @@
                 <meta name="viewport" content="user-scalable=no, initial-scale=1">
 		<title>Test page</title>
 	</head>
+        <template id="video-view">
+                <style>
+                :host {
+                width: 100vh;
+                height: 100vh;
+                }
+                </style>
+</template>
 	<body>
 		<p>Content!</p>
+		<video controls autoplay></video><br>
 		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>
