@@ -25,9 +25,7 @@
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
 
-    navigator.getMedia = ( navigator.mediaDevices.getUserMedia);
-
-    navigator.getMedia(
+navigator.mediaDevices.getUserMedia(
       {
         video: true,
         audio: false
