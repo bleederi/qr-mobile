@@ -1,8 +1,48 @@
-<!--
-	Ideally these elements aren't created until it's confirmed that the 
-	client supports video/camera, but for the sake of illustrating the 
-	elements involved, they are created with markup (not JavaScript)
--->
-<video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>
+<head>
+<meta charset="utf-8">
+<title>QR Mobile</title>
+ 
+<style>
+body {
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<video autoplay="true" id="videoElement">
+	
+	</video>
+</div>
+<script></script>
+
+</body>
+
+var video = document.querySelector("#videoElement");
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+if (navigator.getUserMedia) {       
+	navigator.getUserMedia({video: true}, handleVideo, videoError);
+}
+
+function handleVideo(stream) {
+	video.src = window.URL.createObjectURL(stream);
+}
+
+function videoError() {
+	// do something
+}
+</html>
